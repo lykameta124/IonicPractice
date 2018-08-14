@@ -13,13 +13,14 @@ export class HomePage {
     { id: 2, username: 'Naio', password: '123' },
     { id: 3, username: 'Edio', password: '123' }
   ];
-  name: string = '';
+  username: string = '';
   constructor(public navCtrl: NavController,public alertCtrl: AlertController) {
 
   }
   login(){
-    let found = this.users.some(function (a) {
-      return a.username = this.name;
+    let username = this.username;
+    let found = this.users.some(function (arr) {
+      return arr.username == username;
     });
     if(found){
       this.navCtrl.push(AboutPage);
