@@ -7,6 +7,7 @@
 </ion-header>
 
 <ion-content >
+  
   <ion-item>
     <ion-label floating>Username</ion-label>
     <ion-input type="text" [(ngModel)]="username"></ion-input>
@@ -16,6 +17,9 @@
     <ion-label floating>Password</ion-label>
     <ion-input type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
+  <div *ngIf="show" text-center>
+    <ion-label color="danger">Username or password is incorrect!</ion-label>
+  </div>
   <p padding>
     <button ion-button block (click)="login()">Login</button>
   </p>
